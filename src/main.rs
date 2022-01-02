@@ -47,14 +47,11 @@ fn is_anagram(entry: &Entry, target: &Entry) -> bool {
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    println!("{:?}", args);
-
     if args.len() < 2 {
         println!("Specify at least one word"); exit(1)
     }
 
-    // let dict = read_words("assets/words.txt");
-    let dict = read_words("assets/wordlist-big-20211125.txt");
+    let dict = read_words("assets/wordlist.txt");
 
     for i in 1..args.len() {
         let word_entry = word_to_entry(args[i].clone());
